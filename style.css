@@ -1,0 +1,142 @@
+/* ----- reset ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;  /* deep black */
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* ----- subtle wireframe grid ----- */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 195, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 195, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ----- solid, sharp card ----- */
+.card {
+  background: #121212;   /* almost black, but distinct from body */
+  border: 1px solid #2a2a2a;
+  border-radius: 0;      /* razor sharp */
+  padding: 3rem 2.5rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  position: relative;
+}
+
+/* ----- mode: tiny, faded, all caps ----- */
+.mode {
+  font-size: 0.75rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  transition: color 0.2s;
+}
+
+/* ----- timer container & canvas ----- */
+.timer-container {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 2.5rem;
+}
+
+#progressCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', cursive;  /* heavy, condensed */
+  font-size: 4.8rem;
+  line-height: 1;
+  color: white;
+  letter-spacing: 2px;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.timer-text span {
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* ----- controls: brutalist, no borders ----- */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 0.4rem 0;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+/* ----- the edge: underline becomes a slash on hover ----- */
+.controls button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00ffc3;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.controls button:hover {
+  color: white;
+}
+
+.controls button:hover::after {
+  transform: scaleX(1);
+}
+
+/* accent color for active state (e.g., when timer runs) */
+.controls button:active {
+  color: #00ffc3;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>edge · pomodoro</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <!-- Mode indicator -->
+    <div class="mode">work</div>
+
+    <!-- Timer with canvas progress ring -->
+    <div class="timer-container">
+      <canvas id="progressCanvas" width="220" height="220"></canvas>
+      <div class="timer-text">
+        <span id="minutes">25</span><span id="seconds">00</span>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="start">start</button>
+      <button id="pause">pause</button>
+      <button id="reset">reset</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

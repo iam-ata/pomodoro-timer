@@ -3,7 +3,7 @@
 A dark, minimal, and edgy Pomodoro timer with a neon progress ring.  
 Built with HTML, CSS, and vanilla JavaScript.
 
-🔗 **Live demo:** https://yourusername.github.io/pomodoro-timer
+🔗 **Live demo:** https://iam-ata.github.io/pomodoro-timer
 
 ## ✨ Features
 - 25‑min work / 5‑min break sessions
